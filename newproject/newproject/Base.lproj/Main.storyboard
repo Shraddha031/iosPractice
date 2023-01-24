@@ -219,9 +219,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-K9-msa">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="gggg" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-K9-msa">
                                         <rect key="frame" x="305" y="156" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.53725490200000003" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="onTintColor" red="0.4823529412" green="0.18823529410000001" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="thumbTintColor" red="0.4823529412" green="0.89411764709999997" blue="0.88522181570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="switchAction:" destination="N8E-h4-MRL" eventType="valueChanged" id="tHg-jg-6Me"/>
                                         </connections>
