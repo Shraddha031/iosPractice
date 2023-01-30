@@ -103,6 +103,7 @@ extension ViewController2: UITableViewDelegate,UITableViewDataSource {
         lastInd = indexPath.row
         navigationController?.pushViewController(vc!, animated: true)
     }
+    
     //func send
     
 }

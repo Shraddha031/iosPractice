@@ -39,9 +39,6 @@ class ViewController3: UIViewController {
         
         
     }
-    
-    
-    
 //    @IBAction func btn(_ sender: Any){
 //        if self.delegate != nil && self.label21.text != nil {
 //            let dataToBeSent = self.label21.text
