@@ -14,9 +14,25 @@
             filePath = "CustomDesign/CustomLable.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "init?(coder:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "CustomLable"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50553F78-078F-4B80-A359-3FB7651D5BDE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CustomDesign/ViewController1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "updateSlider(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

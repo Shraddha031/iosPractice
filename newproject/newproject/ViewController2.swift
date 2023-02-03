@@ -49,8 +49,8 @@ class ViewController2: UIViewController,  MyDataSendingDelegateProtocol{
    
     
     func sendDataToFirstViewController(myData: String) {
-        self.dataRecieved.text = myData
-    }
+            self.dataRecieved.text = myData
+        }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tableView.reloadData()

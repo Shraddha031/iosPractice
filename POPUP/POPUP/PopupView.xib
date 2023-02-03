@@ -73,7 +73,6 @@
             <connections>
                 <outlet property="descriptionView" destination="1D4-75-ssg" id="ej2-Ib-IgQ"/>
                 <outlet property="dialogView" destination="mrg-TZ-8rK" id="e4j-6P-V63"/>
-                <outlet property="myDescription" destination="UMr-qK-GVr" id="Q3K-nb-4Jc"/>
                 <outlet property="myHeading" destination="Dg7-TE-epU" id="6Mt-jF-BEc"/>
                 <outlet property="primaryButton" destination="Ds2-lV-nfi" id="AkL-NS-k6l"/>
                 <outlet property="secondaryButton" destination="Xox-rN-4V9" id="ct8-pK-9Ob"/>
