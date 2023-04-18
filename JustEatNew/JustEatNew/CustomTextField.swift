@@ -10,77 +10,66 @@ import SwiftUI
 struct CustomTextField: View {
     var tfName: String?
     @State private var tfData: String = ""
-    @State private var labelIsActive = false
+    @FocusState var labelIsActive
     @State private var pswdIsActive = false
     @State private var borderColor = Color(.gray)
+    private var title: String = ""
+    @Binding private var text: String
+    init(_ title: String, text: Binding<String>, showError: Binding<Bool>) {
+        self.title = title
+        self._text = text
+        self._showError = showError
+    }
+
+
     var pswdField: Bool?
-     @Binding var showError: Bool = false
+     @Binding var showError: Bool
     
-    static var func1: ((String, String)->Void)?
     var body: some View {
         ZStack{
-            if pswdField ?? false {
-                SecureField(tfName ?? "Password", text: $tfData, onCommit: {pswdIsActive = false})
-                    .onChange(of: tfData){ data in
-                    showError = false
-                    CustomTextField.func1?(data,tfName!)
-                    }.onTapGesture {
-                        pswdIsActive = true
-                    }
-                    .padding().overlay {
-                        RoundedRectangle(cornerRadius: 10, style: .continuous).stroke( borderColor,lineWidth: 2)
+            TextField(title, text: $text) { i in
+                if i {
+                    borderColor = (showError) ? Color(.red):Color("BlueShade")
                 }
-                if pswdIsActive{
-                    HStack{
-                        Text(tfName ?? "Email").font(.system(size: 14)).background(.white)
-                        Spacer()
-
-                    }.padding(.bottom, 50).padding(.leading, 20)
+                else{
+                    borderColor = (showError) ? Color(.red):Color(.gray)
                 }
-            } else {
-                TextField(tfName ?? "Email", text: $tfData){i in
-                    if i{
-                        labelIsActive = true
-//                        borderColor = (showError) ? Color(.red): Color("BlueShade")
-    //                    CustomTextField.func1?(tfData,tfName!)
-                }
-                    else{
-                        labelIsActive = false
-                        borderColor = (showError) ? Color(.gray):Color(.red)
-    //                    CustomTextField.func1?(tfData,tfName!)
-                    }
-                }.onChange(of: tfData){ data in
-                    CustomTextField.func1?(data,tfName!)
-                    borderColor = Color("BlueShade")
-                    
-                    
-                }.onTapGesture {
-                    pswdIsActive = false
-                }.onSubmit {
-                    borderColor = (showError) ? Color(.gray) : Color(.red)
-                    print("error is \(showError)")
-                }
-                .padding().overlay {
-                        RoundedRectangle(cornerRadius: 10, style: .continuous).stroke( borderColor,lineWidth: 2)
-                    }
             }
-            
+            .onChange(of: text){ data in
+                showError = false
+                borderColor = (showError) ? Color(.red):Color("BlueShade")
+                
+            }.onTapGesture {
+                showError = false
+                pswdIsActive = false
+            }.onSubmit {
+                borderColor = (showError) ? Color(.red) : Color(.gray)
+                print("error is \(showError)")
+            }.focused($labelIsActive)
+            .padding().overlay {
+                RoundedRectangle(cornerRadius: 10, style: .continuous).stroke( borderColor,lineWidth: 2)
+            }
+        
             if labelIsActive{
                 HStack{
-                    Text(tfName ?? "Email").font(.system(size: 14)).background(.white)
+                    Text(title).font(.system(size: 14)).background(.white)
                     Spacer()
 
-                }.padding(.bottom, 50).padding(.leading, 20)
+                }.padding(.bottom, 50).padding(.leading, 20).onAppear{
+                    borderColor = (showError) ? Color(.red) : Color("BlueShade")
+                }.onDisappear{
+                    borderColor = showError ? Color(.red) : Color(.gray)
+                }
             }
         }.frame(alignment: .leading).onAppear(){
-            borderColor = (showError) ? Color(.gray) : Color(.red)
+            borderColor = (showError) ? Color(.red) : Color(.gray)
             print("error is \(showError)")
         }
     }
 }
 
-//struct CustomTextField_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CustomTextField()
-//    }
-//}
+struct CustomTextField_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomTextField("", text:.constant(""), showError: .constant(false))
+    }
+}

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "veiggieBG.png",
+      "filename" : "veggie.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "veiggieBG 1.png",
+      "filename" : "veggie 1.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "veiggieBG 2.png",
+      "filename" : "veggie 2.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }
